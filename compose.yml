@@ -1,0 +1,13 @@
+services:
+  datacamp-introduction_to_git:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: datacamp-introduction_to_git
+    environment:
+      - GRANT_SUDO=yes
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./introduction_to_git:/home/jovyan/introduction_to_git"
+    restart: unless-stopped
